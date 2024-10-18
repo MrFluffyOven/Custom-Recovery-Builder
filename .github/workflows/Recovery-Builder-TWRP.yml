@@ -121,7 +121,7 @@ jobs:
       if: inputs.REPOPICK_PATCHES != null
       run: |
         source build/envsetup.sh
-        repopick -Q "branch:android-14+status:open+-change:7371+-change:7543+-change:7553+-change:7671+-change:7717+-change:7718"
+        repopick -g https://gerrit.twrp.me ${{ inputs.REPOPICK_PATCHES }}
       working-directory: workspace
       continue-on-error: true
 
@@ -134,11 +134,6 @@ jobs:
             ;;
           14)
             patchNum=7371
-            patchNum=7543
-            patchNum=7553
-            patchNum=7671
-            patchNum=7717
-            patchNum=7718
             ;;
         esac
         source build/envsetup.sh
