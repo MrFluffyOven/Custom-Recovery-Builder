@@ -27,6 +27,10 @@ on:
         description: 'Specify your Device Codename' # As is, just like your PRODUCT_DEVICE in your device tree.
         required: true
         default: 'macedonia'
+      REPOPICK_PATCHES:
+        description: (Optional) Gerrit commit numbers separated by a space to be included in the build (leave blank if not using)
+        type: string
+        required: false
       BUILD_TARGET:
         description: 'Specify your Build Target' # Pick among boot, recovery and vendor_boot
         required: true
