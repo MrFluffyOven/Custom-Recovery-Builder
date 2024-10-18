@@ -121,7 +121,7 @@ jobs:
       if: inputs.REPOPICK_PATCHES != null
       run: |
         source build/envsetup.sh
-        repopick -g https://gerrit.twrp.me ${{ inputs.REPOPICK_PATCHES }}
+        repopick -Q https://gerrit.twrp.me ${{ inputs.REPOPICK_PATCHES }}
       working-directory: workspace
       continue-on-error: true
 
