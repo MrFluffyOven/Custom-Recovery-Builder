@@ -42,6 +42,11 @@ on:
         default: 'system/bin/qseecomd'
 
 jobs:
+  free-disk-space:
+    runs-on: ubuntu-latest
+    steps:
+
+jobs:
   build:
     name: Build TWRP by ${{ github.actor }}
     runs-on: ubuntu-latest
@@ -66,6 +71,21 @@ jobs:
 
     - name: Cleanup
       uses: rokibhasansagar/slimhub_actions@main
+
+    - name: Free Disk Space
+      uses: jlumbroso/free-disk-space@main
+      with:
+        # this might remove tools that are actually needed,
+        # when set to "true" but frees about 6 GB
+        tool-cache: true
+        
+        # all of these default to true, but feel free to set to
+        # "false" if necessary for your workflow
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: false
       
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
