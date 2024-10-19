@@ -42,11 +42,6 @@ on:
         default: 'system/bin/qseecomd'
 
 jobs:
-  free-disk-space:
-    runs-on: ubuntu-latest
-    steps:
-
-jobs:
   build:
     name: Build TWRP by ${{ github.actor }}
     runs-on: ubuntu-latest
