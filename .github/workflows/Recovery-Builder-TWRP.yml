@@ -126,7 +126,7 @@ jobs:
     - name: Repo Sync
       run: |
         cd android-recovery
-        repo sync -j$(nproc --all) --force-sync
+        repo sync -c -j$(nproc --all) --force-sync
 
     - name: Repopick Gerrit patches
       run: |
